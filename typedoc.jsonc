@@ -7,6 +7,9 @@
 		"readme": false,
 		"document": false
 	},
+	"navigationLinks": {
+        "Coverage": "https://lwe8.github.io/multiregexp/lcoview/index.html"
+    },
 	"favicon": "documents/burma.svg",
 	"name": "Multi RegExp",
 	"plugin": ["typedoc-plugin-rename-defaults"]
