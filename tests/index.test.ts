@@ -1,6 +1,6 @@
 import { describe, it, snapshot } from "node:test";
 import path from "node:path";
-import MultiRegexp from "../src/index.js";
+import MultiRegExp from "../src/index.js";
 
 // snapshot dir path
 snapshot.setResolveSnapshotPath((testPath) => {
@@ -11,7 +11,7 @@ snapshot.setResolveSnapshotPath((testPath) => {
 
 describe("Single RegExp", () => {
   const regexp = /hello/;
-  const multiRegExp = new MultiRegexp([regexp]);
+  const multiRegExp = new MultiRegExp([regexp]);
   const string = "hello world";
   const firstMatch = multiRegExp.firstMatch(string);
   const nullMatch = multiRegExp.firstMatch("");
@@ -27,7 +27,7 @@ describe("Single RegExp", () => {
   });
   it("allMatches", (t) => {
     const _regexp = /hi/g;
-    const _multiRegExp = new MultiRegexp([_regexp]);
+    const _multiRegExp = new MultiRegExp([_regexp]);
     const _string = "hihi";
     const iterator = _multiRegExp.allMatches(_string);
     const _firstMatch = iterator.next();
@@ -54,7 +54,7 @@ describe("Single RegExp", () => {
 describe("Two RegExp", () => {
   const regExp1 = /(hi)/g;
   const regExp2 = /(he)llo/g;
-  const multiRegExp = new MultiRegexp([regExp1, regExp2]);
+  const multiRegExp = new MultiRegExp([regExp1, regExp2]);
 
   it("firstMatch", (t) => {
     for (let i = 0; i < 2; i++) {
@@ -99,7 +99,7 @@ describe("getMatched", () => {
   it("Get Matched", (t) => {
     const regexp = /(#{1,6})[ ]+(.*)/g;
     const string = "## Hello World";
-    const pre = new MultiRegexp([regexp]);
+    const pre = new MultiRegExp([regexp]);
     const result = pre.getMatched(string);
     const obj = [
       {
@@ -119,7 +119,7 @@ describe("getMatched", () => {
 describe("findMatch", () => {
   it("should find a match with a single regular expression", (t) => {
     const regExp = /hello/;
-    const multiRegExp = new MultiRegexp([regExp]);
+    const multiRegExp = new MultiRegExp([regExp]);
     const string = "hello world";
     const match = multiRegExp.findMatch(string);
     t.assert.equal(match?.group(0), "hello");
@@ -128,7 +128,7 @@ describe("findMatch", () => {
   it("should find a match with multiple regular expressions", (t) => {
     const regExp = /hello/;
     const regExp2 = /world/;
-    const multiRegExp = new MultiRegexp([regExp, regExp2]);
+    const multiRegExp = new MultiRegExp([regExp, regExp2]);
     const string = "hello world";
     const match = multiRegExp.findMatch(string);
     t.assert.equal(match?.group(0), "hello");
@@ -137,7 +137,7 @@ describe("findMatch", () => {
   it("should return null with multiple regular expressions where none match", (t) => {
     const regExp = /foo/;
     const regExp2 = /bar/;
-    const multiRegExp = new MultiRegexp([regExp, regExp2]);
+    const multiRegExp = new MultiRegExp([regExp, regExp2]);
     const string = "hello world";
     const match = multiRegExp.findMatch(string);
     t.assert.equal(match, null);
@@ -145,7 +145,7 @@ describe("findMatch", () => {
   });
   it("should find a match with a single regular expression", (t) => {
     const regExp = /hello/;
-    const multiRegExp = new MultiRegexp([regExp]);
+    const multiRegExp = new MultiRegExp([regExp]);
     const string = "";
     const match = multiRegExp.findMatch(string);
     t.assert.equal(match, null);
@@ -153,7 +153,7 @@ describe("findMatch", () => {
   });
   it("should return null with a start index that is out of range", (t) => {
     const regExp = /hello/;
-    const multiRegExp = new MultiRegexp([regExp]);
+    const multiRegExp = new MultiRegExp([regExp]);
     const string = "hello world";
     const match = multiRegExp.findMatch(string, 100);
     t.assert.equal(match, null);
