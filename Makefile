@@ -9,6 +9,7 @@ SAY         = @printf "$(COLOR_GREEN)%s\n$(COLOR_END)"
 
 build:
 	$(SAY) "Start building package..."
+	@npm run $@
 
 docs:
 	$(SAY) "Building docs..."

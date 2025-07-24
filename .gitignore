@@ -6,5 +6,6 @@ lcov.ts
 # Build directories
 dist 
 docs
+.tshy
 # Docs dir
 documents

@@ -6,7 +6,7 @@ test.md
 lcov.ts
 ## Build directories
 docs
-
+.tshy
 # .gitignore
 src
 biome.json
