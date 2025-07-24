@@ -1,0 +1,12 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": ["src/index.ts"],
+  "out": "./docs",
+  "headings": {
+    "readme": false,
+    "document": false
+  },
+  "favicon": "documents/burma.svg",
+  "name": "Multi RegExp",
+  "plugin": ["typedoc-plugin-rename-defaults"]
+}

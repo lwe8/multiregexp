@@ -1,0 +1,10 @@
+node_modules 
+# Local Opts
+a.ts
+test.md
+lcov.ts
+# Build directories
+dist 
+docs
+# Docs dir
+documents
