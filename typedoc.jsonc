@@ -1,13 +1,13 @@
 {
-  "$schema": "https://typedoc.org/schema.json",
-  "entryPointStrategy": "expand",
-  "entryPoints": ["src/*"],
-  "out": "./docs",
-  "headings": {
-    "readme": false,
-    "document": false
-  },
-  "favicon": "documents/burma.svg",
-  "name": "Multi RegExp",
-  "plugin": ["typedoc-plugin-rename-defaults"]
+	"$schema": "https://typedoc.org/schema.json",
+	"entryPointStrategy": "expand",
+	"entryPoints": ["src/*"],
+	"out": "./docs",
+	"headings": {
+		"readme": false,
+		"document": false
+	},
+	"favicon": "documents/burma.svg",
+	"name": "Multi RegExp",
+	"plugin": ["typedoc-plugin-rename-defaults"]
 }

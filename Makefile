@@ -5,7 +5,7 @@ COLOR_END   = \e[0m
 SAY         = @printf "$(COLOR_GREEN)%s\n$(COLOR_END)"
 
 
-.PHONY: install build test docs
+.PHONY: install build test docs format lint check
 
 install:
 	$(SAY) "Install dependencies..."
@@ -23,3 +23,15 @@ test:
 	$(SAY) "Testing..."
 	@npm run test:coverage &
 	@npm run test:local
+
+format:
+	$(SAY) "Format code..."
+	@npm run $@
+
+lint:
+	$(SAY) "Linting..."
+	@npm run $@
+
+check:
+	$(SAY) "Checking..."
+	@npm run $@
