@@ -1,15 +1,15 @@
 SHELL := bash
 
-COLOR_GREEN = \e[1;32m
+COLOR_START = \e[1;32m
 COLOR_END   = \e[0m
-SAY         = @printf "$(COLOR_GREEN)%s\n$(COLOR_END)"
+SAY         = @printf "$(COLOR_START)%s\n$(COLOR_END)"
 
 
-.PHONY: install build test docs format lint check
+.PHONY: install build test docs format lint check coverage
 
 install:
 	$(SAY) "Install dependencies..."
-	@npm run $@
+	@npm $@
 
 build:
 	$(SAY) "Start building package..."
@@ -21,8 +21,10 @@ docs:
 
 test:
 	$(SAY) "Testing..."
-	@npm run test:coverage &
-	@npm run test:local
+	@npm run $@
+
+coverage:
+	$(SAY) "Creating code coverage report ..."
 
 format:
 	$(SAY) "Format code..."
